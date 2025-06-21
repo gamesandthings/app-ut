@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/genizy/web-port@main/undertale/" />
+    <base href="https://cdn.jsdelivr.net/gh/gamesandthings/app-ut@main/" />
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta
@@ -367,6 +367,8 @@
           let buffers = [];
 
           function fetchPart(index) {
+            document.getElementById("status").innerText =
+              "Downloading... (" + index + "/" + fileParts.length + ")";
             if (index >= fileParts.length) {
               let mergedBlob = new Blob(buffers);
               let mergedFileUrl = URL.createObjectURL(mergedBlob);
